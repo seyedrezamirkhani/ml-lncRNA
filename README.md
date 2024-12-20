@@ -1,6 +1,6 @@
 # Search and Visualize
 
-This is a personal project to help with my research in the application of Machine Learning to problems related to long change RNA (lncRNA) molecules.
+This is a personal project to help with my research in the application of Machine Learning to problems related to long chain RNA (lncRNA) molecules.
 
 The following issues are addressed:
 
@@ -10,7 +10,7 @@ The following issues are addressed:
 
 - Visualizing the organizations involved with the research papers on a map
 
-- Looking for similarity between papers by inspecting the abstract section
+- Looking for similarity between papers by inspecting the abstract section of papers
 
 - Visualizing this similarity
 
