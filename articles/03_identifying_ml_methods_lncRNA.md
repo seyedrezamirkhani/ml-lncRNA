@@ -13,7 +13,6 @@ In this third part of the series, **Exploring Machine Learning and lncRNA Resear
 Understanding which ML methods are used in lncRNA research offers several advantages:
 - **Trend Analysis**: Recognizing the most popular ML approaches.
 - **Gap Identification**: Spotting underexplored methodologies.
-- **Community Insights**: Highlighting the tools and techniques favored by researchers in the field.
 
 By automating the identification of ML methods, this approach saves time and ensures comprehensive coverage across a large body of literature.
 
@@ -33,25 +32,41 @@ Our methodology involves the following steps:
 ### Technical Walkthrough
 
 #### 1. Paper Collection
-We extracted the full-text content of the papers identified in Part 1. PDFs were converted to text using libraries like `PyPDF2` or `pdfplumber`. Sections such as "Methods," "Results," and "Discussion" were prioritized for analysis.
+We extracted the full-text content of the papers identified in Part 1. 
+PDFs were converted to text using libraries like `PyPDF2`.  
+Using `langdetect` the language of the file was inspected, only those in English were processed further. 
+Sections such as "Methods," "Results," and "Discussion" were prioritized for analysis. 
+Other sections such as "References" and "Appendix" where ignored to speed up processing and avoid detracting from the focus of the paper.
 
 #### 2. Creating a Method List
-To identify ML methods, we compiled a list of common techniques and keywords, including:
-- **Algorithms**: Support Vector Machines (SVM), Random Forest, Gradient Boosting, etc.
-- **Frameworks**: TensorFlow, PyTorch, Scikit-learn, etc.
-- **Approaches**: Clustering, Dimensionality Reduction, Feature Selection, etc.
+To identify ML methods, a list of 15 categories were defined for which associated ML methods were found.These include:
+
+- **Regression Models**: Linear Regression, Polynomial Regression, Ridge Regression, etc.
+- **Classification Models**: Support Vector Machines (SVM), Random Forest, Gradient Boosted Trees, etc.
+- **Clustering Models**: k-Means Clustering, Hierarchical Clustering, Density-Based Spatial Clustering, etc.
+
 
 This list was expanded through domain expertise and iterative refinement.
 
 #### 3. Building an EntityRuler
 Using spaCy, we developed an `EntityRuler` that matches ML methods in text based on:
-- **Keywords**: Predefined terms (e.g., "support vector machine").
-- **Patterns**: Variations of terms (e.g., "random forests," "RF").
+- **Keywords**: Predefined terms e.g. "Support Vector Machines"
+- **Patterns**: Variations of terms using case insensitivity, alternate words and regular expressions
+- **Grouping of Patterns**: Multiple patterns can use the same value for their `id` field as a means of grouping them
+
+An example of these rules created for Support Vector Machines is given below.
+
+```
+{'label': 'ML_METHOD', 'id': 'SUPPORT_VECTOR_MACHINES', 'pattern': [{'LOWER': 'support'}, {'LOWER': 'vector'}, {'LOWER': {'REGEX': 'machines?'}}]} ,
+
+{'label': 'ML_METHOD', 'id': 'SUPPORT_VECTOR_MACHINES', 'pattern': 'SVM'} ,
+```
 
 The `EntityRuler` was tested and refined to maximize precision and recall.
 
 #### 4. Text Matching and Analysis
-The `EntityRuler` was applied to the text of the papers, identifying occurrences of ML methods. Each identified method was logged with its context for validation and further analysis.
+The `EntityRuler` was applied to the text of the papers, identifying occurrences of ML methods. 
+Each identified method was logged with its context for validation and further analysis.
 
 #### 5. Visualization
 Results were visualized to highlight:
