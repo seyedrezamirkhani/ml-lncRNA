@@ -32,9 +32,12 @@ Our methodology involves the following steps:
 ### Technical Walkthrough
 
 #### 1. Paper Collection
-We extracted the full-text content of the papers identified in Part 1. 
-PDFs were converted to text using libraries like `PyPDF2`.  
-Using `langdetect` the language of the file was inspected, only those in English were processed further. 
+We extracted the full-text content of the papers identified in Part 1 when:
+- The url from Google scholar pointed directly to a file that could be downloaded
+- The file was in the PDF format
+- The file was in English
+
+PDFs were converted to text using libraries like `PyPDF2`.  Using `langdetect` the language of the file was inspected, to ensure it is in English. 
 Sections such as "Methods," "Results," and "Discussion" were prioritized for analysis. 
 Other sections such as "References" and "Appendix" where ignored to speed up processing and avoid detracting from the focus of the paper.
 
@@ -69,13 +72,13 @@ The `EntityRuler` was applied to the text of the papers, identifying occurrences
 Each identified method was logged with its context for validation and further analysis.
 
 #### 5. Visualization
-Results were visualized to highlight:
-- **Frequency**: Bar charts of the most commonly mentioned ML methods.
-
-- **Trends**: Time-series analysis of methods over publication years.
-
-- **Co-occurrence**: Network graphs showing relationships between methods and research topics.
-
+Results were visualized at ML method and category level to highlight:
+- **Frequency**: Bar charts of the most commonly mentioned terms.
+![alt](./img/top_20_ml_methods.png)
+- **Trends**: Time-series analysis of terms over publication years.
+![alt](./img/top_20_ml_methods_trend.png)
+- **Co-occurrence**: Network graphs showing relationships between terms.
+![alt](./img/top_20_ml_methods_co-occurrence.png)
 ---
 
 ### Results
