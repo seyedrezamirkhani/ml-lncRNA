@@ -10,11 +10,11 @@ In this third part of the series, **Exploring Machine Learning and lncRNA Resear
 
 ### The Motivation
 
-Understanding which ML methods are used in lncRNA research offers several advantages:
+Understanding which ML methods and models are used in lncRNA research offers several advantages:
 - **Trend Analysis**: Recognizing the most popular ML approaches.
 - **Gap Identification**: Spotting underexplored methodologies.
 
-By automating the identification of ML methods, this approach saves time and ensures comprehensive coverage across a large body of literature.
+By automating the identification of ML methods and models, this approach saves time and ensures comprehensive coverage across a large body of literature.
 
 ---
 
@@ -22,9 +22,9 @@ By automating the identification of ML methods, this approach saves time and ens
 
 Our methodology involves the following steps:
 1. **Paper Collection**: Using the papers identified in Part 1, focusing on their full-text content or supplementary materials.
-2. **Creating a Method List**: Compiling a comprehensive list of common ML techniques and patterns for detection.
-3. **Building an EntityRuler**: Developing a rule-based NLP model using spaCy’s `EntityRuler` to match ML methods in text.
-4. **Text Matching and Analysis**: Applying the model to identify ML methods across the collected papers.
+2. **Creating a ML Term List**: Compiling a comprehensive list of common ML methods and models for detection.
+3. **Building an EntityRuler**: Developing a rule-based NLP model using spaCy’s `EntityRuler` to match ML terms in text.
+4. **Text Matching and Analysis**: Applying the model to identify ML terms across the collected papers.
 5. **Visualization**: Summarizing the findings using interactive and static visualizations.
 
 ---
@@ -41,15 +41,34 @@ PDFs were converted to text using libraries like `PyPDF2`.  Using `langdetect` t
 Sections such as "Methods," "Results," and "Discussion" were prioritized for analysis. 
 Other sections such as "References" and "Appendix" where ignored to speed up processing and avoid detracting from the focus of the paper.
 
-#### 2. Creating a Method List
-To identify ML methods, a list of 15 categories were defined for which associated ML methods were found.These include:
+#### 2. Creating a ML Term List
+Our ML Term List can be divided into ML Methods and ML Models.
+The difference between a Machine Learning (ML) Method and an ML Model lies in their scope and role in the ML pipeline.
 
-- **Regression Models**: Linear Regression, Polynomial Regression, Ridge Regression, etc.
-- **Classification Models**: Support Vector Machines (SVM), Random Forest, Gradient Boosted Trees, etc.
-- **Clustering Models**: k-Means Clustering, Hierarchical Clustering, Density-Based Spatial Clustering, etc.
+##### 1. ML Method
+An ML method refers to the algorithmic approach or technique used to train a model. It defines how the data is processed, patterns are learned, and predictions are made. ML methods include:
 
+  - Supervised Learning (e.g., Regression, Classification)
+  - Unsupervised Learning (e.g., Clustering, Dimensionality Reduction)
+  - Semi-supervised Learning
+  - Reinforcement Learning
+  - Deep Learning
 
-This list was expanded through domain expertise and iterative refinement.
+  Each method contains different algorithms, such as:
+  - Decision Trees
+  - Support Vector Machines (SVM)
+  - Neural Networks
+  - K-Means Clustering
+  - Principal Component Analysis (PCA)
+
+##### 2. ML Model
+
+  An ML model is a trained instance of an algorithm that has learned from data and can make predictions or classifications. The model is the result of applying an ML method to a dataset.
+
+  For example:
+
+  - **Method**: Supervised Learning → Algorithm: Decision Tree → **Model**: A trained Decision Tree that classifies emails as spam or not spam.
+  - **Method**: Deep Learning → Algorithm: Convolutional Neural Network (CNN) → **Model**: A CNN trained to detect faces in images.
 
 #### 3. Building an EntityRuler
 Using spaCy, we developed an `EntityRuler` that matches ML methods in text based on:
@@ -57,22 +76,23 @@ Using spaCy, we developed an `EntityRuler` that matches ML methods in text based
 - **Patterns**: Variations of terms using case insensitivity, alternate words and regular expressions
 - **Grouping of Patterns**: Multiple patterns can use the same value for their `id` field as a means of grouping them
 
-An example of these rules created for Support Vector Machines is given below.
+An example of the rules created for Support Vector Machines is given below.
 
 ```
-{'label': 'ML_METHOD', 'id': 'SUPPORT_VECTOR_MACHINES', 'pattern': [{'LOWER': 'support'}, {'LOWER': 'vector'}, {'LOWER': {'REGEX': 'machines?'}}]} ,
-
-{'label': 'ML_METHOD', 'id': 'SUPPORT_VECTOR_MACHINES', 'pattern': 'SVM'} ,
+{'label': 'ML_TERM', 'id': 'SUPPORT_VECTOR_MACHINES', 'pattern': [{'LOWER': 'support'}, {'LOWER': 'vector'}, {'LOWER': {'REGEX': 'machines?'}}]} ,
+```
+```
+{'label': 'ML_TERM', 'id': 'SUPPORT_VECTOR_MACHINES', 'pattern': 'SVM'} ,
 ```
 
 The `EntityRuler` was tested and refined to maximize precision and recall.
 
 #### 4. Text Matching and Analysis
-The `EntityRuler` was applied to the text of the papers, identifying occurrences of ML methods. 
+The `EntityRuler` was applied to the text of the papers, identifying occurrences of ML terms. 
 Each identified method was logged with its context for validation and further analysis.
 
 #### 5. Visualization
-Results were visualized at ML method and category level to highlight:
+Results were visualized at term, method and model level to highlight:
 - **Frequency**: Bar charts of the most commonly mentioned terms.
 ![alt](./img/top_20_ml_methods.png)
 - **Trends**: Time-series analysis of terms over publication years.
@@ -102,10 +122,10 @@ These findings not only provide an overview of current practices but also highli
 
 ### Conclusion
 
-By identifying ML methods in lncRNA research, we gain a clearer understanding of the tools and techniques driving the field forward. This analysis not only highlights current trends but also provides a foundation for future exploration and innovation.
+By identifying ML terms in lncRNA research, we gain a clearer understanding of the tools and techniques driving the field forward. This analysis not only highlights current trends but also provides a foundation for future exploration and innovation.
 
-In the next part of this series, we will build on this work by creating a neural network model to enhance the identification of ML methods and compare its performance against rule-based approaches.
+In the next part of this series, we will build on this work by creating a neural network model to enhance the identification of ML terms and compare its performance against rule-based approaches.
 
 ---
 
-What are your thoughts on these findings? Are there additional ML methods you’d like us to explore? Let us know in the comments below!
+What are your thoughts on these findings? Are there additional ML terms you’d like us to explore? Let us know in the comments below!
