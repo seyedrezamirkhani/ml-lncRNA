@@ -96,7 +96,7 @@ Results were visualized at term, method and model level to highlight:
 - **Frequency**: Bar charts to show popularity.
 ![alt](./img/top_20_ml_methods.png)
 - **Trends**: Time-series analysis over publication years.
-![alt](./img/top_20_ml_methods_trend.png)
+![alt](./img/top_20_ml_method_trend.png)
 - **Co-occurrence**: Network graphs showing relationships.
 ![alt](./img/co-occurrence_heatmap_ml_methods_and_models.png)
 ---
