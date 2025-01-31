@@ -93,12 +93,12 @@ Each identified method was logged with its context for validation and further an
 
 #### 5. Visualization
 Results were visualized at term, method and model level to highlight:
-- **Frequency**: Bar charts of the most commonly mentioned terms.
+- **Frequency**: Bar charts to show popularity.
 ![alt](./img/top_20_ml_methods.png)
-- **Trends**: Time-series analysis of terms over publication years.
+- **Trends**: Time-series analysis over publication years.
 ![alt](./img/top_20_ml_methods_trend.png)
-- **Co-occurrence**: Network graphs showing relationships between terms.
-![alt](./img/top_20_ml_methods_co-occurrence.png)
+- **Co-occurrence**: Network graphs showing relationships.
+![alt](./img/co-occurrence_heatmap_ml_methods_and_models.png)
 ---
 
 ### Results
