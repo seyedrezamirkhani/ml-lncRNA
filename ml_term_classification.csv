@@ -37,7 +37,7 @@ Co-Training,ML Method,,Semi-Supervised Learning
 Tri-Training,ML Method,,Semi-Supervised Learning
 Pseudo-Labeling,ML Method,,Semi-Supervised Learning
 Graph-Based Learning Models,ML Method,,Semi-Supervised Learning
-Generative Models,ML Method,,Generative Modeling
+Generative Models,ML Method,,Unsupervised Learning
 Temporal-Difference Learning,ML Method,,Reinforcement Learning
 REINFORCE,ML Method,,Reinforcement Learning
 Proximal Policy Optimization,ML Method,,Reinforcement Learning
@@ -59,8 +59,8 @@ Vision Transformers,ML Model,Transformer Model,
 Swin Transformer,ML Model,Transformer Model,
 Generative Adversarial Networks,ML Model,Generative Model,
 Variational Autoencoders,ML Model,Generative Model,
-Normalizing Flows,ML Method,,Generative Modeling
-Diffusion Models,ML Method,,Generative Modeling
+Normalizing Flows,ML Method,,Unsupervised Learning
+Diffusion Models,ML Method,,Unsupervised Learning
 Stable Diffusion,ML Model,Generative Model,
 Denoising Diffusion Probabilistic Models,ML Model,Generative Model,
 Bayesian Networks,ML Model,Probabilistic Model,
