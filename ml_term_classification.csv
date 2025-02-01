@@ -1,0 +1,96 @@
+ml_term,classification,ml_model_category,ml_method_category
+Linear Regression,ML Model,Regression Model,
+Polynomial Regression,ML Model,Regression Model,
+Ridge Regression,ML Model,Regression Model,
+Lasso Regression,ML Model,Regression Model,
+Elastic Net Regression,ML Model,Regression Model,
+Bayesian Linear Regression,ML Model,Regression Model,
+Quantile Regression,ML Model,Regression Model,
+Support Vector Regression,ML Model,Regression Model,
+Logistic Regression,ML Model,Classification Model,
+Support Vector Machines,ML Model,Kernel-Based Model,
+k-Nearest Neighbors,ML Model,Instance-Based Model,
+Decision Trees,ML Model,Tree-Based Model,
+Random Forests,ML Model,Tree-Based Model,
+Gradient Boosted Trees,ML Model,Ensemble Model,
+XGBoost,ML Model,Ensemble Model,
+LightGBM,ML Model,Ensemble Model,
+CatBoost,ML Model,Ensemble Model,
+Naive Bayes,ML Model,Probabilistic Model,
+Neural Networks,ML Model,Neural Network,
+k-Means Clustering,ML Method,,Unsupervised Learning
+Hierarchical Clustering,ML Method,,Unsupervised Learning
+Density-Based Spatial Clustering,ML Method,,Unsupervised Learning
+Mean Shift,ML Method,,Unsupervised Learning
+Gaussian Mixture Models,ML Model,Clustering Model,
+Spectral Clustering,ML Method,,Unsupervised Learning
+Principal Component Analysis,ML Method,,Unsupervised Learning
+t-Distributed Stochastic Neighbor Embedding,ML Method,,Unsupervised Learning
+Uniform Manifold Approximation and Projection,ML Method,,Unsupervised Learning
+Independent Component Analysis,ML Method,,Unsupervised Learning
+Autoencoders,ML Model,Neural Network,
+Apriori Algorithm,ML Method,,Unsupervised Learning
+Eclat Algorithm,ML Method,,Unsupervised Learning
+FP-Growth Algorithm,ML Method,,Unsupervised Learning
+Self-Training,ML Method,,Semi-Supervised Learning
+Co-Training,ML Method,,Semi-Supervised Learning
+Tri-Training,ML Method,,Semi-Supervised Learning
+Pseudo-Labeling,ML Method,,Semi-Supervised Learning
+Graph-Based Learning Models,ML Method,,Semi-Supervised Learning
+Generative Models,ML Method,,Generative Modeling
+Temporal-Difference Learning,ML Method,,Reinforcement Learning
+REINFORCE,ML Method,,Reinforcement Learning
+Proximal Policy Optimization,ML Method,,Reinforcement Learning
+Trust Region Policy Optimization,ML Method,,Reinforcement Learning
+Deep Deterministic Policy Gradient,ML Method,,Reinforcement Learning
+Deterministic Policy Gradient,ML Method,,Reinforcement Learning
+Vanilla Policy Gradient,ML Method,,Reinforcement Learning
+Twin Delayed DDPG,ML Method,,Reinforcement Learning
+Soft Actor-Critic,ML Method,,Reinforcement Learning
+VGGNet,ML Model,Neural Network,
+Inception,ML Model,Neural Network,
+Recurrent Neural Networks,ML Model,Recurrent Model,
+Long Short-Term Memory,ML Model,Recurrent Model,
+Bidirectional Gated Recurrent Unit,ML Model,Recurrent Model,
+Bidirectional RNNs,ML Model,Recurrent Model,
+Transformer,ML Model,Neural Network,
+Text-to-Text Transfer Transformer,ML Model,Transformer Model,
+Vision Transformers,ML Model,Transformer Model,
+Swin Transformer,ML Model,Transformer Model,
+Generative Adversarial Networks,ML Model,Generative Model,
+Variational Autoencoders,ML Model,Generative Model,
+Normalizing Flows,ML Method,,Generative Modeling
+Diffusion Models,ML Method,,Generative Modeling
+Stable Diffusion,ML Model,Generative Model,
+Denoising Diffusion Probabilistic Models,ML Model,Generative Model,
+Bayesian Networks,ML Model,Probabilistic Model,
+Markov Chains,ML Method,,Probabilistic Modeling
+Hidden Markov Models,ML Model,Probabilistic Model,
+Kalman Filters,ML Model,Probabilistic Model,
+Conditional Random Fields,ML Model,Probabilistic Model,
+Graph Neural Networks,ML Model,Graph-Based Model,
+Graph Convolutional Networks,ML Model,Graph-Based Model,
+Graph Attention Networks,ML Model,Graph-Based Model,
+Autoregressive Integrated Moving Average,ML Model,Time Series Model,
+Seasonal ARIMA,ML Model,Time Series Model,
+Vector Autoregression,ML Model,Time Series Model,
+State-Space Models,ML Model,Time Series Model,
+Prophet,ML Model,Time Series Model,
+Bagging,ML Method,,Supervised Learning
+Random Forests,ML Model,Tree-Based Model,
+Boosting,ML Model,Ensemble Model,
+AdaBoost,ML Model,Ensemble Model,
+Gradient Boosting,ML Model,Ensemble Model,
+XGBoost,ML Model,Ensemble Model,
+Stacking,ML Method,,Supervised Learning
+Blending,ML Method,,Supervised Learning
+GPT-4,ML Model,Transformer Model,
+ChatGPT,ML Model,Transformer Model,
+Claude,ML Model,Transformer Model,
+LLaMA,ML Model,Transformer Model,
+Contrastive Language-Image Pretraining,ML Method,,Self-Supervised Learning
+DALL-E,ML Model,Generative Model,
+Stable Diffusion,ML Model,Generative Model,
+Q-Learning,ML Method,,Reinforcement Learning
+Deep Q-Networks,ML Model,Reinforcement Learning Model,
+Multi Layer Perceptron,ML Model,Neural Network,
