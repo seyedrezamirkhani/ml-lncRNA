@@ -94,7 +94,7 @@ Each identified method was logged with its context for validation and further an
 #### 5. Visualization
 Results were visualized at term, method and model level to highlight:
 - **Frequency**: Bar charts to show popularity.
-![alt](./img/top_20_ml_methods.png)
+![alt](./img/top_20_ml_term_paper_pct.png)
 - **Trends**: Time-series analysis over publication years.
 ![alt](./img/top_20_ml_method_trend.png)
 - **Co-occurrence**: Network graphs showing relationships.
@@ -104,7 +104,7 @@ Results were visualized at term, method and model level to highlight:
 ### Results
 
 Our analysis revealed several key insights:
-- **Popular Methods**: SVM and Random Forest emerged as the most frequently mentioned algorithms.
+- **Popular Methods**: Dimentionality Reduction and Random Forest emerged as the most frequently mentioned algorithms.
 - **Emerging Techniques**: Deep learning frameworks like TensorFlow and PyTorch showed a sharp increase in recent years.
 - **Method Trends**: Clustering and Dimensionality Reduction remain foundational techniques in lncRNA studies.
 
