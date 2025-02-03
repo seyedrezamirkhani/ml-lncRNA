@@ -78,12 +78,39 @@ Using spaCy, we developed an `EntityRuler` that matches ML methods in text based
 
 An example of the rules created for Support Vector Machines is given below.
 
-```
-{'label': 'ML_TERM', 'id': 'SUPPORT_VECTOR_MACHINES', 'pattern': [{'LOWER': 'support'}, {'LOWER': 'vector'}, {'LOWER': {'REGEX': 'machines?'}}]} ,
-```
-```
-{'label': 'ML_TERM', 'id': 'SUPPORT_VECTOR_MACHINES', 'pattern': 'SVM'} ,
-```
+<div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace;">
+<pre>
+{
+    <span style="color: #6BAED6;">'label'</span>: <span style="color: #2171B5;">'ML_TERM'</span>, 
+    <span style="color: #6BAED6;">'id'</span>: <span style="color: #2171B5;">'SUPPORT_VECTOR_MACHINES'</span>, 
+    <span style="color: #6BAED6;">'pattern'</span>: [
+        {
+            <span style="color: #6BAED6;">'LOWER'</span>: <span style="color: #2171B5;">'support'</span>
+        }, 
+        {
+            <span style="color: #6BAED6;">'LOWER'</span>: <span style="color: #2171B5;">'vector'</span>
+        }, 
+        {
+            <span style="color: #6BAED6;">'LOWER'</span>: {
+                <span style="color: #6BAED6;">'REGEX'</span>: <span style="color: #2171B5;">'machines?'</span>
+            }
+        }
+    ]
+}
+</pre>
+</div>
+
+<div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace;">
+<pre>
+{
+    <span style="color: #6BAED6;">'label'</span>: <span style="color: #2171B5;">'ML_TERM'</span>, 
+    <span style="color: #6BAED6;">'id'</span>: <span style="color: #2171B5;">'SUPPORT_VECTOR_MACHINES'</span>, 
+    <span style="color: #6BAED6;">'pattern'</span>: <span style="color: #2171B5;">'SVM'</span>
+}
+</pre>
+</div>
+
+
 
 The `EntityRuler` was tested and refined to maximize precision and recall.
 
@@ -96,7 +123,7 @@ Results were visualized at term, method and model level to highlight:
 - **Frequency**: Bar charts to show popularity.
 ![alt](./img/top_20_ml_term_paper_pct.png)
 - **Trends**: Time-series analysis over publication years.
-![alt](./img/top_20_ml_method_trend.png)
+![alt](./img/top_20_ml_method_trend_2020.png)
 - **Co-occurrence**: Network graphs showing relationships.
 ![alt](./img/co-occurrence_heatmap_ml_methods_and_models.png)
 ---
