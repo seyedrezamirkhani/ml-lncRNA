@@ -6,6 +6,8 @@ Long non-coding RNAs (lncRNAs) are critical players in biological processes, and
 
 In this third part of the series, **Exploring Machine Learning and lncRNA Research**, we focus on identifying specific ML methods used in published research papers. By using natural language processing (NLP) techniques to analyze the text of these papers, we uncover the range of ML methods applied in lncRNA studies.
 
+You can find the complete project on GitHub, and the files related to this article are located in the subfolder [part-03-finding-ML-methods-with-rules](https://github.com/seyedrezamirkhani/ml-lncRNA/blob/main/src/notebooks/part-03-finding-ML-methods-with-rules/).
+
 ---
 
 ### The Motivation
@@ -64,7 +66,7 @@ An ML training method refers to the algorithmic approach or technique used to tr
 
 
 #### 3. Building an EntityRuler
-Using **spaCy**, we developed an `EntityRuler` that matches ML methods in text based on:
+Using **spaCy**, we developed an `EntityRuler` that matches ML terms in text based on:
 - **Keywords**: Predefined terms e.g. "Support Vector Machines"
 - **Patterns**: Variations of terms using case insensitivity, alternate words and regular expressions
 - **Grouping of Patterns**: Multiple patterns can use the same value for their `id` field as a means of grouping them
@@ -73,35 +75,34 @@ An example of the rules created for Support Vector Machines is given below.
 
 <div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace;">
 <pre>
-{
-    <span style="color: #6BAED6;">'label'</span>: <span style="color: #2171B5;">'ML_TERM'</span>, 
-    <span style="color: #6BAED6;">'id'</span>: <span style="color: #2171B5;">'SUPPORT_VECTOR_MACHINES'</span>, 
-    <span style="color: #6BAED6;">'pattern'</span>: [
-        {
-            <span style="color: #6BAED6;">'LOWER'</span>: <span style="color: #2171B5;">'support'</span>
-        }, 
-        {
-            <span style="color: #6BAED6;">'LOWER'</span>: <span style="color: #2171B5;">'vector'</span>
-        }, 
-        {
-            <span style="color: #6BAED6;">'LOWER'</span>: {
-                <span style="color: #6BAED6;">'REGEX'</span>: <span style="color: #2171B5;">'machines?'</span>
+patterns = [
+    {
+        <span style="color: #6BAED6;">'label'</span>: <span style="color: #2171B5;">'ML_TERM'</span>, 
+        <span style="color: #6BAED6;">'id'</span>: <span style="color: #2171B5;">'SUPPORT_VECTOR_MACHINES'</span>, 
+        <span style="color: #6BAED6;">'pattern'</span>: [
+            {
+                <span style="color: #6BAED6;">'LOWER'</span>: <span style="color: #2171B5;">'support'</span>
+            }, 
+            {
+                <span style="color: #6BAED6;">'LOWER'</span>: <span style="color: #2171B5;">'vector'</span>
+            }, 
+            {
+                <span style="color: #6BAED6;">'LOWER'</span>: {
+                    <span style="color: #6BAED6;">'REGEX'</span>: <span style="color: #2171B5;">'machines?'</span>
+                }
             }
-        }
-    ]
-}
+        ]
+    },
+    {
+        <span style="color: #6BAED6;">'label'</span>: <span style="color: #2171B5;">'ML_TERM'</span>, 
+        <span style="color: #6BAED6;">'id'</span>: <span style="color: #2171B5;">'SUPPORT_VECTOR_MACHINES'</span>, 
+        <span style="color: #6BAED6;">'pattern'</span>: <span style="color: #2171B5;">'SVM'</span>
+    }, ...
+]
 </pre>
 </div>
 
-<div style="background-color: #f5f5f5; padding: 10px; border-radius: 5px; font-family: monospace;">
-<pre>
-{
-    <span style="color: #6BAED6;">'label'</span>: <span style="color: #2171B5;">'ML_TERM'</span>, 
-    <span style="color: #6BAED6;">'id'</span>: <span style="color: #2171B5;">'SUPPORT_VECTOR_MACHINES'</span>, 
-    <span style="color: #6BAED6;">'pattern'</span>: <span style="color: #2171B5;">'SVM'</span>
-}
-</pre>
-</div>
+The patterns are added to an instance of an `EntityRuler` and saved to disk for re-use.
 
 #### 4. Text Matching and Analysis
 The `EntityRuler` was applied to the text of the papers, identifying occurrences of ML terms. 
