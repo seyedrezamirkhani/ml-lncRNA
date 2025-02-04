@@ -10,60 +10,53 @@ You can find the complete project on GitHub, and the files related to this artic
 
 ---
 
-### The Motivation
+### Motivation
 
-Understanding which ML training methods and model architectures are used in lncRNA research offers several advantages:
-- **Trend Analysis**: Recognizing the most popular ML approaches.
-- **Gap Identification**: Spotting underexplored methodologies.
+Understanding ML training methods and model architectures in lncRNA research offers several advantages:
 
-By automating the identification of ML training methods and model architectures, it saves time and ensures comprehensive coverage across a large body of literature.
+- **Trend Analysis**: Identifying the most widely used ML approaches.
+- **Gap Identification**: Detecting underexplored methodologies.
+- **Efficiency**: Automating ML method identification saves time and ensures comprehensive literature coverage.
 
 ---
 
-### The Approach
+### Approach
 
-Our methodology involves the following steps:
-1. **Paper Collection**: Using the papers identified in Part 1, focusing on their full-text content or supplementary materials.
-2. **Creating a ML Term List**: Compiling a comprehensive list of common ML methods and models for detection.
-3. **Building an EntityRuler**: Developing a rule-based NLP model using spaCy’s `EntityRuler` to match ML terms in text.
-4. **Text Matching and Analysis**: Applying the model to identify ML terms across the collected papers.
-5. **Visualization**: Summarizing the findings using interactive and static visualizations.
+Our methodology follows these key steps:
+
+1. **Paper Collection**: Gathering full-text papers identified in Part 1.
+2. **Creating an ML Term List**: Compiling common ML training methods and model architectures.
+3. **Building an EntityRuler**: Developing a rule-based NLP model using spaCy.
+4. **Text Matching & Analysis**: Identifying ML terms in papers.
+5. **Visualization**: Presenting findings using interactive and static visualizations.
 
 ---
 
 ### Technical Walkthrough
 
 #### 1. Paper Collection
-We extracted the full-text content of the papers identified in Part 1 when:
-- The url from Google scholar pointed directly to a file that could be downloaded
-- The file was in the PDF format
-- The file was in English
+We extracted full-text content from relevant papers identified in Part 1, prioritizing sections such as **Methods, Results, and Discussion** while excluding references and appendices. Papers were processed under the following criteria:
 
-PDFs were converted to text using libraries like `PyPDF2`.  Using `langdetect` the language of the file was inspected, to ensure it is in English. 
-Sections such as "Methods," "Results," and "Discussion" were prioritized for analysis. 
-Other sections such as "References" and "Appendix" where ignored to speed up processing and avoid detracting from the focus of the paper.
+- Directly downloadable from Google Scholar.
+- Available in PDF format.
+- Written in English (verified using `langdetect`).
+
+PDFs were converted to text using `PyPDF2` for analysis.
 
 #### 2. Creating a ML Term List
-Our ML Term List can be divided into ML training methods and ML model architectures.
-The difference between a Machine Learning (ML) Method and an ML Model lies in their scope and role in the ML pipeline.
+Our ML term list distinguishes between **ML training methods** and **ML model architectures**:
 
-##### 1. ML Training Method
-An ML training method refers to the algorithmic approach or technique used to train a model. It defines how the data is processed, patterns are learned, and predictions are made. They are:
-
+- **ML Training Methods**: Define how models learn from data.
   - Supervised Learning (e.g., Regression, Classification)
   - Unsupervised Learning (e.g., Clustering, Dimensionality Reduction)
   - Self-Supervised Learning
   - Reinforcement Learning
 
-##### 2. ML Model Architecture
-
-  A model architecture refers to the structural design of a machine learning model, defining how data flows through it and how computations are performed. It includes the organization and configuration of layers, nodes, and connections within the model, which ultimately determine how the model learns patterns from data. For example:
-
-  - Feedforward Neural Networks (FNNs) – Simple networks where data flows in one direction.
-  - Convolutional Neural Networks (CNNs) – Used for image processing, consisting of convolutional and pooling layers.
-  - Recurrent Neural Networks (RNNs) – Designed for sequential data, using recurrent connections to maintain temporal dependencies.
-  - Transformer-based Models – Advanced architectures (e.g., BERT, GPT) using attention mechanisms for NLP tasks.
-
+- **ML Model Architectures**: Define model structure and data flow.
+  - Feedforward Neural Networks (FNNs)
+  - Convolutional Neural Networks (CNNs)
+  - Recurrent Neural Networks (RNNs)
+  - Transformer-based Models (e.g., BERT, GPT)
 
 #### 3. Building an EntityRuler
 Using **spaCy**, we developed an `EntityRuler` that matches ML terms in text based on:
