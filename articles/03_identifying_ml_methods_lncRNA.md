@@ -109,7 +109,7 @@ The `EntityRuler` was applied to the text of the papers, identifying occurrences
 Each identified term was logged with its context for validation and further analysis.
 
 #### 5. Visualization
-Results were visualized at term, method and model level to highlight:
+Results were visualized at term, training method and model architecture level to highlight:
 - **Frequency**: Bar charts to show popularity.
 ![alt](./img/top_20_ml_term_paper_pct.png)
 - **Trends**: Time-series analysis over publication years.
